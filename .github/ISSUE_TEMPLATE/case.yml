@@ -1,0 +1,56 @@
+name: Share your case
+description: Tell me about two implementations that must agree
+title: "[case] "
+labels: ["case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing. I am looking for cases where the divergence was silent: it compiled, the tests
+        passed, and the behavior still differed. Please do not paste secrets or private code.
+  - type: textarea
+    id: implementations
+    attributes:
+      label: The two implementations
+      description: Languages, stacks, and what each one does.
+      placeholder: "Python reference engine and a TypeScript port for the checkout."
+    validations:
+      required: true
+  - type: textarea
+    id: contract
+    attributes:
+      label: The contract between them
+      description: What is supposed to be identical? A spec, a formula, a schema, a set of examples?
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: What must match
+      description: Tokens, ranking, price, score, citations, payload, error codes, something else.
+    validations:
+      required: true
+  - type: textarea
+    id: today
+    attributes:
+      label: What you use today
+      description: Unit tests, snapshots, a custom harness, Pact, Specmatic, nothing.
+  - type: textarea
+    id: silent
+    attributes:
+      label: What fails silently
+      description: The divergence that unit tests did not catch, if you have one.
+  - type: textarea
+    id: contact
+    attributes:
+      label: How to reach you
+      description: GitHub handle, email, or "reply in this issue".
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I removed secrets and private code from this report.
+          required: true
+        - label: I am OK with this case being discussed publicly, without the private details.
+          required: true
