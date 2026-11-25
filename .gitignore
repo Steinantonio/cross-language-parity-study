@@ -6,3 +6,7 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Demo
+demo/node_modules/
+demo/dist/

@@ -1,0 +1,65 @@
+{
+  "caseId": "purchase-report",
+  "contract": {
+    "name": "purchase-report",
+    "version": "1.0.0"
+  },
+  "note": "Cesta sintética: R$ 2,50 de produtos com imposto de 5%; o contrato define arredondamento de empate para cima.",
+  "input": {
+    "orderId": "PED-2048",
+    "customer": "Marina Costa",
+    "date": "24 nov 2026",
+    "currency": "BRL",
+    "taxRate": 5,
+    "items": [
+      {
+        "sku": "PIR-01",
+        "name": "Pirulito",
+        "quantity": 1,
+        "unitPrice": 1
+      },
+      {
+        "sku": "BAL-01",
+        "name": "Bala",
+        "quantity": 3,
+        "unitPrice": 0.5
+      }
+    ],
+    "discount": 0,
+    "deliveryFee": 0
+  },
+  "expectedOutput": {
+    "currency": "BRL",
+    "tax": 0.13,
+    "subtotal": 2.5,
+    "discount": 0,
+    "deliveryFee": 0,
+    "total": 2.63
+  },
+  "implementations": [
+    {
+      "name": "Implementação A",
+      "language": "TypeScript",
+      "output": {
+        "currency": "BRL",
+        "tax": 0.13,
+        "subtotal": 2.5,
+        "discount": 0,
+        "deliveryFee": 0,
+        "total": 2.63
+      }
+    },
+    {
+      "name": "Implementação B",
+      "language": "Python",
+      "output": {
+        "currency": "BRL",
+        "tax": 0.12,
+        "subtotal": 2.5,
+        "discount": 0,
+        "deliveryFee": 0,
+        "total": 2.62
+      }
+    }
+  ]
+}

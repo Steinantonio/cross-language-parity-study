@@ -22,6 +22,33 @@ the part that is missing.
 - The gap is not a missing category; it is a missing center: a contract-first, open-source CLI for
   algorithmic parity.
 
+## Demo: one cent of rounding drift
+
+The synthetic basket contains one lollipop and three candies (R$ 2.50 total). A 5% tax produces
+R$ 0.125 before rounding. The contract rounds positive ties up to cents: the TypeScript example
+returns R$ 0.13, while Python's built-in `round` uses ties-to-even and returns R$ 0.12. The order
+totals therefore differ by one cent, even though both examples pass the same ordinary R$ 2.00 test.
+
+<p align="center">
+  <a href="https://steinantonio.github.io/cross-language-parity-study/">
+    <img
+      src="docs/assets/parity-report-preview.jpg"
+      width="640"
+      alt="Purchase report comparing TypeScript and Python outputs; the tax and total differ by one cent."
+    />
+  </a>
+</p>
+
+**[Open the interactive demo →](https://steinantonio.github.io/cross-language-parity-study/)**
+
+This is a proof-of-concept, not the V1 product. Its CLI compares pre-recorded, language-neutral JSON
+outputs; it does not execute TypeScript or Python workers. The code snippets and outputs are
+illustrative.
+
+Run locally with `cd demo && npm install && npm run dev`. To run the fixture through the CLI, use
+`npm run parity:demo` from `demo/`; this example intentionally exits with status `1` because the
+Python output differs from the contract.
+
 ## What the study covers
 
 | Section | What it answers |
@@ -64,6 +91,7 @@ Open an issue with the **Share your case** template, or send a message with:
 ## Status
 
 - **Research preview:** published.
+- **Demo:** synthetic proof-of-concept; it illustrates the gap but is not the V1 implementation.
 - **Implementation:** private for now; it will be linked here when the V1 is ready.
 - **Corrections:** welcome via issue or pull request.
 
