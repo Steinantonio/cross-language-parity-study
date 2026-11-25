@@ -4,6 +4,9 @@
 
 **Research preview — November 2026.**
 
+> **CLI in development:** This repository contains the market study and an illustrative demo. The reusable,
+> contract-first, language-agnostic CLI for algorithmic parity is currently being developed.
+
 Two implementations of the same contract drift silently. A tokenizer difference, a locale-sensitive
 lowercase, a rounding rule or a tie-break order does not throw. It returns a slightly different answer, in
 one language, for some inputs.
